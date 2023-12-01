@@ -1,4 +1,4 @@
-package com.example.shibu;
+package com.example.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,9 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 public class MainActivity extends AppCompatActivity {
-
     EditText e1;
     EditText e2;
     Button btn;
@@ -18,26 +16,27 @@ public class MainActivity extends AppCompatActivity {
     TextView t2;
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        e1=(EditText) findViewById(R.id.e1);
-        e2=(EditText) findViewById(R.id.e2);
-        btn=(Button) findViewById(R.id.btn);
-        btn.setOnClickListener(new View.OnClickListener() {
+        e1=(EditText) findViewById(R.id.editText3);
+        e2=(EditText) findViewById(R.id.editText4);
+        btn=(Button) findViewById(R.id.login);
+        btn.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                if(e1.getText().toString().equals("admin")&&e2.getText().toString().equals("admin")) {
-                    Toast.makeText(getApplicationContext(),
-                            "Redirecting...",
-                            Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(getApplicationContext(),
-                            "Wrong Credentials",
-                            Toast.LENGTH_SHORT).show();
+
+            public void onClick(View view){
+                if(e1.getText().toString().equals("admin")&&e2.getText().toString().equals("admin")){
+                    Toast.makeText(getApplicationContext(),"Login successful",Toast.LENGTH_SHORT).show();
+
+                }
+                else{
+
+                    Toast.makeText(getApplicationContext(),"Wrong Credentials",Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
     }
 }
